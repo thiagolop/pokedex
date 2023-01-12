@@ -62,8 +62,7 @@ class _AboutInfoEvolutionWidgetState extends State<AboutInfoEvolutionWidget> {
         physics: const BouncingScrollPhysics(),
         children: [
           getImage(numero: widget.numero.toString()),
-          getImage(numero: numeroo.toString()),
-          getImage(numero: numerooo.toString()),
+          
         ],
       ),
     );
