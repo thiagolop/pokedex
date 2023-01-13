@@ -4,6 +4,7 @@ import 'package:pokedex/core/models/pokemon_evolution_model.dart';
 import '../../../repositories/pokemon_evolution_repository.dart';
 import '../../../repositories/pokemon_evolution_repository_imp.dart';
 import '../../../service/dio_service_imp.dart';
+import 'evolution.dart';
 
 class AboutInfoEvolutionWidget extends StatefulWidget {
   final int numero;
@@ -38,32 +39,14 @@ class _AboutInfoEvolutionWidgetState extends State<AboutInfoEvolutionWidget> {
     });
   }
 
-  Widget getImage({required String numero}) {
-    return Center(
-      child: SizedBox(
-        height: 175,
-        width: 175,
-        child: CachedNetworkImage(
-            placeholder: (context, url) => Container(
-                  color: Colors.transparent,
-                ),
-            imageUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/$numero.png'),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
-    var numeroo = widget.numero + 1;
-    var numerooo = widget.numero + 2;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-      child: ListView(
-        physics: const BouncingScrollPhysics(),
-        children: [
-          getImage(numero: widget.numero.toString()),
-          
-        ],
+      child: Center(
+        child: Evolution(
+          numero: widget.numero,
+        ),
       ),
     );
   }
