@@ -30,6 +30,7 @@ class InicialPage extends StatelessWidget {
           return HomePage(
             list: snapshot.data!,
             onItemTap: onItemTap,
+          
           );
         }
         if (snapshot.hasError) {
